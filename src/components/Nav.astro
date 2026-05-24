@@ -4,7 +4,7 @@ import { SITE } from "../config";
 
 <nav id="nav">
   <div class="nav-in">
-    <a href="/" class="brand" aria-label="nottardy home"><span class="n">not</span>tardy</a>
+    <a href="/" class="brand" aria-label="Tardy home">tardy</a>
     <div class="nav-links">
       <a href={SITE.github} class="lnk" rel="noopener" target="_blank">GitHub ↗</a>
       <a href="/#download" class="btn btn-primary nav-dl">Download</a>
@@ -27,7 +27,7 @@ import { SITE } from "../config";
     max-width: var(--maxw); margin: 0 auto; padding: 16px 28px;
     display: flex; align-items: center; gap: 24px;
   }
-  .brand { text-decoration: none; }
+  .brand { text-decoration: none; color: var(--ink); }
   .nav-links { margin-left: auto; display: flex; align-items: center; gap: 22px; }
   .lnk {
     color: #d7dbf2; font-size: 14px; font-weight: 500; text-decoration: none;

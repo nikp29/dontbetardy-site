@@ -4,7 +4,7 @@ import { SITE } from "../config";
 
 <footer>
   <div class="wrap foot-in">
-    <a href="/" class="brand" style="font-size:16px"><span class="n">not</span>tardy</a>
+    <a href="/" class="brand" style="font-size:16px">tardy</a>
     <div class="foot-links">
       <a href="/privacy">Privacy Policy</a>
       <a href={SITE.github} rel="noopener" target="_blank">GitHub</a>
@@ -17,7 +17,7 @@ import { SITE } from "../config";
 <style>
   footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 40px; }
   .foot-in { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-  .brand { text-decoration: none; }
+  .brand { text-decoration: none; color: var(--ink); }
   .foot-links { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
   .foot-links a { color: var(--mut-2); font-size: 13px; text-decoration: none; transition: color 0.2s; }
   .foot-links a:hover { color: var(--peri); }

@@ -9,8 +9,9 @@ export const SITE = {
   contactEmail: "nikp29@gmail.com",
 
   github: "https://github.com/nikp29/tardy",
-  // Latest .dmg — GitHub Releases "latest" redirect (asset name pattern may need adjusting at release time).
-  dmgUrl: "https://github.com/nikp29/tardy/releases/latest",
+  // Direct .dmg download — stable asset name resolves to the newest release.
+  // Produced by tardy's build-app.sh + release workflow (drag-install: app → Applications).
+  dmgUrl: "https://github.com/nikp29/tardy/releases/latest/download/Tardy.dmg",
   brewTap: "brew tap nikp29/tardy",
   brewCask: "brew install --cask tardy",
 

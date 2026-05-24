@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/ProseLayout.astro
-title: "Privacy Policy — nottardy"
+title: "Privacy Policy — dontbetardy"
 description: "How Tardy handles your calendar data: read-only, on-device, never transmitted."
 path: "/privacy"
 ---

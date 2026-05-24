@@ -24,9 +24,7 @@
     <circle cx="150" cy="214" r="20" fill="#8fb8f6"/>
   </g>
   <!-- wordmark + tagline -->
-  <text x="500" y="300" font-family="Instrument Sans, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-3">
-    <tspan fill="#8fb8f6">not</tspan><tspan fill="#eef0fb">tardy</tspan>
-  </text>
+  <text x="500" y="300" font-family="Instrument Sans, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-3" fill="#eef0fb">tardy</text>
   <text x="503" y="372" font-family="Instrument Sans, Arial, sans-serif" font-size="40" font-weight="500" fill="#b6bbd8">Don’t be tardy.</text>
   <text x="503" y="430" font-family="DM Mono, monospace" font-size="22" fill="#8186a8" letter-spacing="2">macOS menu bar app · never miss a meeting</text>
 </svg>

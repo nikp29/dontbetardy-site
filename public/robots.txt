@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nottardy.app/sitemap-index.xml
+Sitemap: https://dontbetardy.app/sitemap-index.xml

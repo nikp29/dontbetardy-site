@@ -1,4 +1,4 @@
-# nottardy.app
+# dontbetardy.app
 
 Marketing + privacy site for **[Tardy](https://github.com/nikp29/tardy)** — a macOS menu
 bar app that takes over your screen before every meeting so you're never late.
@@ -62,10 +62,10 @@ verification. Editing copy never touches component code.
 
 ## Launch / verification checklist (out of repo)
 
-1. Register **nottardy.app** via Vercel; connect this repo for git deploys.
+1. Register **dontbetardy.app** via Vercel; connect this repo for git deploys.
 2. Verify the domain in **Google Search Console** (DNS TXT via Vercel).
 3. Rasterize `public/og.svg` → a richer `public/og.png` (1200×630) — optional polish.
-4. OAuth consent screen: homepage `https://nottardy.app`, privacy
-   `https://nottardy.app/privacy`, upload logo, scope justification, demo video.
+4. OAuth consent screen: homepage `https://dontbetardy.app`, privacy
+   `https://dontbetardy.app/privacy`, upload logo, scope justification, demo video.
 5. Replace the privacy draft with the reviewed Cowork policy.
 6. Flip `GOOGLE_CALENDAR_AVAILABLE` once verified.

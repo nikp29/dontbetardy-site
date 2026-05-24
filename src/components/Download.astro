@@ -1,0 +1,62 @@
+---
+import { SITE } from "../config";
+const brewCopy = `${SITE.brewTap}\n${SITE.brewCask}`;
+---
+
+<section id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="mono-label reveal">get tardy</div>
+      <h2 class="reveal">Free and open source.</h2>
+    </div>
+
+    <div class="dl-wrap reveal">
+      <div class="terminal">
+        <div class="tbar" aria-hidden="true">
+          <span class="d" style="background:#ff5f57"></span>
+          <span class="d" style="background:#febc2e"></span>
+          <span class="d" style="background:#28c840"></span>
+          <button class="copy" data-copy={brewCopy} aria-label="Copy Homebrew commands">copy</button>
+        </div>
+        <pre><code><span class="pr">$</span> {SITE.brewTap}
+<span class="pr">$</span> {SITE.brewCask}</code></pre>
+      </div>
+
+      <div class="cta">
+        <a href={SITE.dmgUrl} class="btn btn-primary" rel="noopener" target="_blank">↓ Download .dmg</a>
+        <a href={SITE.github} class="btn btn-ghost btn-gh" rel="noopener" target="_blank">View on GitHub</a>
+      </div>
+
+      <p class="req">
+        requires {SITE.minMacOS} or later · not yet notarized — right-click → Open on first launch
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .dl-wrap { max-width: 600px; margin: 0 auto; text-align: center; }
+  .terminal {
+    text-align: left; border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+    background: #0b0b1c; margin: 8px 0 26px;
+  }
+  .tbar {
+    display: flex; align-items: center; gap: 7px; padding: 11px 15px;
+    background: #14142c; border-bottom: 1px solid var(--line);
+  }
+  .tbar .d { width: 10px; height: 10px; border-radius: 50%; }
+  .tbar .copy {
+    margin-left: auto; font-family: "DM Mono", monospace; font-size: 11px; color: var(--mut);
+    cursor: pointer; border: 1px solid var(--line); border-radius: 6px; padding: 4px 9px;
+    background: transparent; transition: color 0.2s, border-color 0.2s;
+  }
+  .tbar .copy:hover { color: var(--peri); border-color: rgba(143, 184, 246, 0.4); }
+  .terminal pre { padding: 18px; overflow-x: auto; }
+  .terminal code {
+    font-family: "DM Mono", monospace; font-size: 13.5px; line-height: 1.9; color: #cdd2ee; white-space: pre;
+  }
+  .terminal .pr { color: var(--peri); }
+  .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-gh { font-family: "Instrument Sans", sans-serif; font-size: 15px; font-weight: 600; }
+  .req { font-family: "DM Mono", monospace; font-size: 12px; color: var(--mut-2); margin-top: 18px; line-height: 1.7; }
+</style>

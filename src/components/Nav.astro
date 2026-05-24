@@ -1,0 +1,38 @@
+---
+import { SITE } from "../config";
+---
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="/" class="brand" aria-label="nottardy home"><span class="n">not</span>tardy</a>
+    <div class="nav-links">
+      <a href={SITE.github} class="lnk" rel="noopener" target="_blank">GitHub ↗</a>
+      <a href="/#download" class="btn btn-primary nav-dl">Download</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(10, 10, 24, 0.72);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-in {
+    max-width: var(--maxw); margin: 0 auto; padding: 16px 28px;
+    display: flex; align-items: center; gap: 24px;
+  }
+  .brand { text-decoration: none; }
+  .nav-links { margin-left: auto; display: flex; align-items: center; gap: 22px; }
+  .lnk {
+    color: #d7dbf2; font-size: 14px; font-weight: 500; text-decoration: none;
+    transition: color 0.2s;
+  }
+  .lnk:hover { color: #fff; }
+  .nav-dl { padding: 9px 16px; font-size: 14px; }
+</style>

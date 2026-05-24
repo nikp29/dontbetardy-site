@@ -1,0 +1,26 @@
+---
+import { SITE } from "../config";
+---
+
+<footer>
+  <div class="wrap foot-in">
+    <a href="/" class="brand" style="font-size:16px"><span class="n">not</span>tardy</a>
+    <div class="foot-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href={SITE.github} rel="noopener" target="_blank">GitHub</a>
+      <span class="muted">Not affiliated with Google</span>
+      <span class="muted">© {new Date().getFullYear()}</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 40px; }
+  .foot-in { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .brand { text-decoration: none; }
+  .foot-links { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .foot-links a { color: var(--mut-2); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .foot-links a:hover { color: var(--peri); }
+  .foot-links .muted { color: var(--mut-2); font-size: 13px; }
+  @media (max-width: 560px) { .foot-in { flex-direction: column; align-items: flex-start; gap: 16px; } .foot-links { margin-left: 0; } }
+</style>

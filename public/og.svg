@@ -1,0 +1,32 @@
+<!-- Source for a richer OG raster. Rasterize to public/og.png at 1200x630 before launch
+     (e.g. `rsvg-convert og.svg -o og.png`, or open in a browser and screenshot). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1a3a"/>
+      <stop offset="0.6" stop-color="#0d0d20"/>
+      <stop offset="1" stop-color="#080814"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="35%" cy="30%" r="50%">
+      <stop offset="0" stop-color="#8fb8f6" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#8fb8f6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1c3e"/><stop offset="1" stop-color="#0d0d24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- icon -->
+  <g transform="translate(130,165)">
+    <rect width="300" height="300" rx="66" fill="url(#ic)"/>
+    <rect x="131" y="78" width="38" height="100" rx="19" fill="#8fb8f6"/>
+    <circle cx="150" cy="214" r="20" fill="#8fb8f6"/>
+  </g>
+  <!-- wordmark + tagline -->
+  <text x="500" y="300" font-family="Instrument Sans, Arial, sans-serif" font-size="104" font-weight="700" letter-spacing="-3">
+    <tspan fill="#8fb8f6">not</tspan><tspan fill="#eef0fb">tardy</tspan>
+  </text>
+  <text x="503" y="372" font-family="Instrument Sans, Arial, sans-serif" font-size="40" font-weight="500" fill="#b6bbd8">Don’t be tardy.</text>
+  <text x="503" y="430" font-family="DM Mono, monospace" font-size="22" fill="#8186a8" letter-spacing="2">macOS menu bar app · never miss a meeting</text>
+</svg>

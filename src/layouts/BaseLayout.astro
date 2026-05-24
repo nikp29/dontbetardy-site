@@ -1,0 +1,135 @@
+---
+import "../styles/global.css";
+import { SITE } from "../config";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Path for canonical/OG url, e.g. "/" or "/privacy" */
+  path?: string;
+}
+
+const {
+  title = `${SITE.name} — ${SITE.tagline}`,
+  description = SITE.description,
+  path = "/",
+} = Astro.props;
+
+const canonical = new URL(path, SITE.url).href;
+const ogImage = new URL("/og.png", SITE.url).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0d0d20" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+
+  <body>
+    <div class="bg"></div>
+    <div class="aurora a1"></div>
+    <div class="aurora a2"></div>
+    <div class="aurora a3"></div>
+    <div class="grain"></div>
+    <div class="progress" id="progress"></div>
+
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <div class="toast" id="toast">Copied to clipboard</div>
+
+    <style>
+      .progress {
+        position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 60;
+        background: linear-gradient(90deg, var(--peri), #b9a8ff);
+        box-shadow: 0 0 12px var(--peri);
+      }
+      .toast {
+        position: fixed; bottom: 26px; left: 50%;
+        transform: translateX(-50%) translateY(80px);
+        background: var(--peri); color: #0a0a18; font-weight: 600; font-size: 14px;
+        padding: 11px 20px; border-radius: 11px; z-index: 80;
+        box-shadow: 0 14px 40px -10px rgba(143, 184, 246, 0.8);
+        transition: transform 0.3s cubic-bezier(0.2, 1.4, 0.4, 1);
+      }
+      .toast.show { transform: translateX(-50%) translateY(0); }
+    </style>
+
+    <script>
+      // Scroll progress + nav blur
+      const nav = document.getElementById("nav");
+      const progress = document.getElementById("progress");
+      function onScroll() {
+        const h = document.documentElement;
+        const sc = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
+        if (progress) progress.style.width = sc * 100 + "%";
+        if (nav) nav.classList.toggle("scrolled", h.scrollTop > 30);
+      }
+      document.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      // Scroll-reveal
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              const el = e.target as HTMLElement;
+              el.style.transitionDelay = (el.dataset.d || "0") + "ms";
+              el.classList.add("in");
+              io.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document.querySelectorAll<HTMLElement>(".reveal").forEach((el) => io.observe(el));
+      // Stagger reveals inside the hero on first paint
+      document
+        .querySelectorAll<HTMLElement>("header .reveal")
+        .forEach((el, i) => (el.dataset.d = String(i * 90)));
+
+      // Copy-to-clipboard
+      const toast = document.getElementById("toast");
+      function showToast() {
+        if (!toast) return;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1600);
+      }
+      document.querySelectorAll<HTMLElement>("[data-copy]").forEach((b) =>
+        b.addEventListener("click", () => {
+          const text = b.dataset.copy || "";
+          navigator.clipboard?.writeText(text);
+          showToast();
+        }),
+      );
+    </script>
+  </body>
+</html>

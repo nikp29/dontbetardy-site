@@ -1,0 +1,39 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  path={frontmatter.path ?? "/"}
+>
+  <section class="prose-section">
+    <div class="wrap">
+      <article class="prose">
+        <slot />
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose-section { padding: 150px 0 60px; }
+  .prose { max-width: 720px; margin: 0 auto; }
+  .prose :global(h1) { font-size: clamp(32px, 5vw, 44px); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
+  .prose :global(h2) { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin: 38px 0 12px; color: var(--ink); }
+  .prose :global(p), .prose :global(li) { color: var(--mut); font-size: 16px; line-height: 1.7; }
+  .prose :global(p) { margin: 12px 0; }
+  .prose :global(ul) { margin: 12px 0 12px 22px; }
+  .prose :global(li) { margin: 6px 0; }
+  .prose :global(a) { color: var(--peri); text-decoration: none; border-bottom: 1px solid rgba(143, 184, 246, 0.4); }
+  .prose :global(a:hover) { border-bottom-color: var(--peri); }
+  .prose :global(strong) { color: var(--ink); }
+  .prose :global(hr) { border: none; border-top: 1px solid var(--line); margin: 32px 0; }
+  .prose :global(.lead) { color: var(--mut-2); font-family: "DM Mono", monospace; font-size: 13px; letter-spacing: 0.04em; }
+  .prose :global(.draft-note) {
+    margin: 20px 0 32px; padding: 16px 18px; border-radius: 12px;
+    border: 1px dashed rgba(143, 184, 246, 0.4); background: rgba(143, 184, 246, 0.05);
+    font-size: 14px; color: var(--peri); line-height: 1.6;
+  }
+</style>

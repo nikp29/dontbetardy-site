@@ -1,8 +1,8 @@
 // Central site config — single source of truth for links + feature flags.
 
 export const SITE = {
-  name: "dontbetardy",
-  url: "https://dontbetardy.app",
+  name: "Tardy",
+  url: "https://tardy.nikhilpatel.xyz",
   tagline: "Don't be tardy.",
   description:
     "Tardy is a macOS menu bar app that takes over your screen before every meeting, so you never miss the start. Reads your calendar, surfaces the join link, and counts you down.",

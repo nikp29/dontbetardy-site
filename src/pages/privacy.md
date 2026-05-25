@@ -22,7 +22,7 @@ Tardy is not affiliated with, endorsed by, or sponsored by Google, Apple, Zoom, 
 
 ## Who we are
 
-"Tardy," "we," "our," and "us" refer to the developer(s) of the Tardy macOS app, distributed via [dontbetardy.app](https://dontbetardy.app) and as open source at [github.com/nikp29/tardy](https://github.com/nikp29/tardy). Because Tardy is open source, you can read the full source code yourself to verify how data is handled.
+"Tardy," "we," "our," and "us" refer to the developer(s) of the Tardy macOS app, distributed via [tardy.nikhilpatel.xyz](https://tardy.nikhilpatel.xyz) and as open source at [github.com/nikp29/tardy](https://github.com/nikp29/tardy). Because Tardy is open source, you can read the full source code yourself to verify how data is handled.
 
 For any privacy questions, contact: **nikp29@gmail.com**.
 
@@ -96,12 +96,12 @@ Tardy processes calendar data locally on your device wherever you are located. B
 
 ## Changes to this policy
 
-If we change this policy, we will update the "Effective date" at the top and post the revised policy at [dontbetardy.app/privacy](https://dontbetardy.app/privacy). Material changes that affect how Google user data is handled will be highlighted in the app or on the website. Your continued use of Tardy after a change takes effect means you accept the revised policy.
+If we change this policy, we will update the "Effective date" at the top and post the revised policy at [tardy.nikhilpatel.xyz/privacy](https://tardy.nikhilpatel.xyz/privacy). Material changes that affect how Google user data is handled will be highlighted in the app or on the website. Your continued use of Tardy after a change takes effect means you accept the revised policy.
 
 ## Contact
 
 For privacy questions, requests, or concerns about this policy or Tardy's handling of your data, contact:
 
 **Email:** nikp29@gmail.com
-**Website:** [dontbetardy.app](https://dontbetardy.app)
+**Website:** [tardy.nikhilpatel.xyz](https://tardy.nikhilpatel.xyz)
 **Source code:** [github.com/nikp29/tardy](https://github.com/nikp29/tardy)

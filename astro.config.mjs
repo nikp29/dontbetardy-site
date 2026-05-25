@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build
 export default defineConfig({
-  site: "https://dontbetardy.app",
+  site: "https://tardy.nikhilpatel.xyz",
   integrations: [sitemap()],
   vite: {
     // Cast: @tailwindcss/vite ships Vite plugin types from a different Vite

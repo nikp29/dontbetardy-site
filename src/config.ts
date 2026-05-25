@@ -12,8 +12,9 @@ export const SITE = {
   // Direct .dmg download — stable asset name resolves to the newest release.
   // Produced by tardy's build-app.sh + release workflow (drag-install: app → Applications).
   dmgUrl: "https://github.com/nikp29/tardy/releases/latest/download/Tardy.dmg",
-  brewTap: "brew tap nikp29/tardy",
-  brewCask: "brew install --cask tardy",
+  // Fully-qualified cask token: auto-taps nikp29/homebrew-tardy and installs in one
+  // command (a bare `brew install --cask tardy` fails without tapping first).
+  brewInstall: "brew install --cask nikp29/tardy/tardy",
 
   minMacOS: "macOS 14 (Sonoma)",
 } as const;

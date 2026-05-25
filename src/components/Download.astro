@@ -1,6 +1,5 @@
 ---
 import { SITE } from "../config";
-const brewCopy = `${SITE.brewTap}\n${SITE.brewCask}`;
 ---
 
 <section id="download">
@@ -16,10 +15,9 @@ const brewCopy = `${SITE.brewTap}\n${SITE.brewCask}`;
           <span class="d" style="background:#ff5f57"></span>
           <span class="d" style="background:#febc2e"></span>
           <span class="d" style="background:#28c840"></span>
-          <button class="copy" data-copy={brewCopy} aria-label="Copy Homebrew commands">copy</button>
+          <button class="copy" data-copy={SITE.brewInstall} aria-label="Copy Homebrew command">copy</button>
         </div>
-        <pre><code><span class="pr">$</span> {SITE.brewTap}
-<span class="pr">$</span> {SITE.brewCask}</code></pre>
+        <pre><code><span class="pr">$</span> {SITE.brewInstall}</code></pre>
       </div>
 
       <div class="cta">
@@ -27,9 +25,7 @@ const brewCopy = `${SITE.brewTap}\n${SITE.brewCask}`;
         <a href={SITE.github} class="btn btn-ghost btn-gh" rel="noopener" target="_blank">View on GitHub</a>
       </div>
 
-      <p class="req">
-        requires {SITE.minMacOS} or later · not yet notarized — right-click → Open on first launch
-      </p>
+      <p class="req">requires {SITE.minMacOS} or later</p>
     </div>
   </div>
 </section>

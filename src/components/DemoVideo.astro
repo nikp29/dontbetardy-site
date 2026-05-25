@@ -13,41 +13,26 @@
       </p>
     </div>
 
-    <div class="screen reveal">
-      <div class="screen-bar" aria-hidden="true">
-        <span class="d" style="background:#ff5f57"></span>
-        <span class="d" style="background:#febc2e"></span>
-        <span class="d" style="background:#28c840"></span>
-        <span class="t">your Mac</span>
-      </div>
-      <video
-        class="demo-vid"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="/demo-poster.jpg"
-        aria-label="Tardy taking over the screen before a meeting starts"
-      >
-        <source src="/demo.webm" type="video/webm" />
-        <source src="/demo.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <video
+      class="demo-vid reveal"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/demo-poster.jpg"
+      aria-label="Tardy taking over the screen before a meeting starts"
+    >
+      <source src="/demo.webm" type="video/webm" />
+      <source src="/demo.mp4" type="video/mp4" />
+    </video>
   </div>
 </section>
 
 <style>
-  .screen {
-    max-width: 860px; margin: 0 auto; border-radius: 18px; overflow: hidden;
-    border: 1px solid var(--line); background: #0b0b1c;
+  .demo-vid {
+    display: block; width: 100%; max-width: 860px; height: auto; margin: 0 auto;
+    border-radius: 18px;
     box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.8);
   }
-  .screen-bar {
-    display: flex; align-items: center; gap: 7px; padding: 12px 16px;
-    background: #14142c; border-bottom: 1px solid var(--line);
-  }
-  .screen-bar .d { width: 11px; height: 11px; border-radius: 50%; }
-  .screen-bar .t { margin-left: 12px; font-family: "DM Mono", monospace; font-size: 12px; color: var(--mut-2); }
-  .demo-vid { display: block; width: 100%; height: auto; }
 </style>

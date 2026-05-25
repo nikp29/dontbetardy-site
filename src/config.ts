@@ -18,7 +18,3 @@ export const SITE = {
 
   minMacOS: "macOS 14 (Sonoma)",
 } as const;
-
-// Flip to `true` once Google OAuth verification lands — turns the Google Calendar
-// card from "Coming soon" to "Available now". One-line change, no layout edits.
-export const GOOGLE_CALENDAR_AVAILABLE = true;

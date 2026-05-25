@@ -21,4 +21,4 @@ export const SITE = {
 
 // Flip to `true` once Google OAuth verification lands — turns the Google Calendar
 // card from "Coming soon" to "Available now". One-line change, no layout edits.
-export const GOOGLE_CALENDAR_AVAILABLE = false;
+export const GOOGLE_CALENDAR_AVAILABLE = true;

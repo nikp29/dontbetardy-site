@@ -7,7 +7,7 @@ path: "/privacy"
 
 # Privacy Policy for Tardy
 
-**Effective date:** May 24, 2026
+**Effective date:** July 14, 2026
 
 Tardy is a free, open-source macOS menu-bar app that shows a full-screen reminder before each of your calendar meetings and gives you a one-click button to join the call. This policy explains what data Tardy accesses, how it is handled, and the choices you have. It is written in plain language, but it is also the binding privacy notice for the app.
 
@@ -17,6 +17,7 @@ Tardy is not affiliated with, endorsed by, or sponsored by Google, Apple, Zoom, 
 
 - Tardy runs entirely on your Mac. There is **no Tardy backend** — no servers, databases, or cloud infrastructure operated by us.
 - Tardy reads your calendar (from Google Calendar and/or macOS Calendar) only to show you reminders and join buttons for your upcoming meetings.
+- **Google Calendar access is strictly opt-in.** Tardy does not contact Google, request tokens, or read any Google data unless and until you explicitly click "Connect Google Account" in the app's Settings.
 - **No calendar data, OAuth token, or personal information is ever sent to us or to any third party.** There are no analytics, no tracking, no telemetry, and no ads.
 - You can revoke access at any time inside the app and/or at [myaccount.google.com/permissions](https://myaccount.google.com/permissions).
 
@@ -30,15 +31,22 @@ For any privacy questions, contact: **nikp29@gmail.com**.
 
 Tardy needs to know about your upcoming meetings in order to remind you about them and to find the join link or dial-in number. To do that, it can read your calendar from one or both of the following sources, at your choice.
 
-### 1. Google Calendar (via Google OAuth)
+### 1. Google Calendar (via Google OAuth) — opt-in
 
-If you connect a Google account, Tardy uses Google OAuth and requests **only** the following scope:
+Tardy does not access, request tokens for, or otherwise communicate with your Google account unless and until you explicitly click **Connect Google Account** in the app's Settings. Fresh installs never contact Google.
+
+If you choose to connect a Google account, Tardy uses Google OAuth and requests **only** the following scope:
 
 - `https://www.googleapis.com/auth/calendar.readonly`
 
 This is a **read-only** scope. Tardy can read your calendars and events; it cannot create, modify, or delete events, and it does not request any other Google scope.
 
-From your Google Calendar, Tardy reads the information needed to show a meeting reminder and a join button: event titles, start and end times, locations, descriptions and conferencing data (such as Zoom, Google Meet, Microsoft Teams, or Webex links and detected dial-in numbers), and attendee response status. Tardy uses this information solely to schedule and display reminders on your Mac.
+Under this scope, Tardy calls two Google Calendar API endpoints:
+
+- **`calendarList.list`** — to enumerate the list of calendars in your account (name, ID, color) and show a per-calendar picker in Settings, so you can opt individual calendars in or out (for example, to silence a shared work calendar or a subscribed holidays calendar).
+- **`events.list`** — to read upcoming events from each calendar you have opted in.
+
+From each event, Tardy reads only the fields needed to show a meeting reminder and a join button: event titles, start and end times, locations, descriptions and conferencing data (such as Zoom, Google Meet, Microsoft Teams, or Webex links and detected dial-in numbers), and attendee response status. Tardy uses this information solely to schedule and display reminders on your Mac.
 
 ### 2. macOS Calendar (via Apple EventKit)
 
@@ -64,7 +72,11 @@ Everything Tardy does with your calendar happens on your Mac. Specifically:
 
 ## Google API Services User Data Policy
 
-Tardy's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the **Limited Use** requirements. In particular:
+Tardy's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the **Limited Use** requirements.
+
+> The use of information received from Google APIs — including raw and derived Google user data — will adhere to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements.
+
+In particular:
 
 - Tardy uses Google user data **only** to provide the user-facing feature described in this policy — displaying full-screen reminders for the user's own calendar events on the user's own Mac, with a one-click join button.
 - Tardy **does not** use Google user data to serve advertisements of any kind, including retargeted or personalized advertising.
